@@ -4,7 +4,7 @@ import sys
 import tornado.ioloop
 import tornado.web
 
-LISTEN_PORT = 8888
+LISTEN_PORT = 80
 
 __version__ = '1.0'
 
