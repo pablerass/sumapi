@@ -5,4 +5,4 @@ services:
     build: .
     image: sumapi
     ports:
-      - "80:80"
+      - "80:8888"

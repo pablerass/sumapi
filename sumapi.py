@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """Simple API with mathmatical functions for learning purposes."""
+import os
 import sys
 import tornado.ioloop
 import tornado.web
 
-LISTEN_PORT = 80
+LISTEN_PORT = 8888
 
 __version__ = '1.0'
 
@@ -55,7 +56,8 @@ def wsgi_application():
 def main(argv=None):
     """Main function."""
     app = application()
-    app.listen(LISTEN_PORT)
+    port = int(os.environ.get("PORT", LISTEN_PORT))
+    app.listen(port)
     tornado.ioloop.IOLoop.current().start()
 
 

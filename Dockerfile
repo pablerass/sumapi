@@ -1,6 +1,6 @@
 FROM python:3-onbuild
 
-EXPOSE 80
+EXPOSE 8888
 
 CMD [ "python", "./sumapi.py" ]
 
