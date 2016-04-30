@@ -1,16 +1,16 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
+- '2.7'
+- '3.4'
+- '3.5'
 install:
-  - pip install -r requirements.txt -r requirements-dev.txt
+- pip install -r requirements.txt -r requirements-dev.txt
 before_script:
-  - flake8 .
+- flake8 .
 script:
-  - nosetests --with-coverage
+- nosetests --with-coverage
 after_success:
-  - coveralls
+- coveralls
 deploy:
   provider: heroku
   buildpack: python
@@ -20,4 +20,4 @@ deploy:
     develop: sumapi-develop
 env:
   global:
-  - secure: t2SkDZMYaiBQGb18SyRcZF96rlLxo5/XaAZ7p59yI01RRa/DSfU3CDYNZgZsWsZOGAXP3MI6QZWQCjZh22+GfQCimDlhvdt0mC5J0eWSGOnSYoJ6i1PqqArg2+Ykt6wS8bGNzjgCMurbeWeAb5KGeTBzGQIatshSEykeoSNFtkN64w2Lb0vD/NBwl+yXg35WRS+HyqVkJRDpczZX3HTZjKCq9gH3QLDRUrRtHqvk22JPJ9Q0fNHAEEgyntsQfML2mCsf/loGaDw69c+xSkecCKq1dCB4rKNa0J/DngoXWmPKUJrCvTNIAKgB3IWj22ABoPExaYJFJXzTTyvlNUOETFmCZFBWSqrUkjI+cbAhmR9DWzlWsJN3VyLxJ+2ZmLa+H2DwMOoZmPstDVk+y/HwdAFxAc+M+I88I6NJ/WcRfkeIg1t/++/vEH28WY53bFa19HlHrCKzE5EqeS03MY6M6OY5tx5J1VW/45bR6ZvMLXI0A+oRwAYePvnOvb5oXrlBOFQQjKYKwgsCA3D16as7FTg0odMqkYxk9/V5+5An65WqbQRx06fxU270ZkKUh7bdXblH2LuA8N93mk+bnMyI4aLJ/x6Jgi1t41D8nSyWaMHO+jjfC5WwOtom4P/6G00WvTdID9tUasqDQqUyqyX7QL3UlrpceZWuJJeP5OZ+mxQ=
+  - secure: MhriwGoAsr8dc4z8yiaGPFwIvzXTiYMYtZUncwC4wq8t1W3cE6aUapEQ8irQ3gN71TK/JmSRDKl4rfKo4tXE1WwT/LAo0Z+qm/PtRVca7Me5rszRTQ0IIIHNCBIAoEdUO+bOSyi6h/+aAoQoK0uPJ7FfwC5QKzV3XAfTuUn+GLLm6pvrum5uuAgGJEPfMRSAX2ZdPO+L41xXi28uY37wjgRkLfzh/SKuP6kjauifJ9uGVyQf8raq+xouJ7Yf9ZiGM+iV7YivTyzpt8pYPNkMOIlozEa7FepEXLsfFEAWBnvI30MV0X2YU5i6ZygJz1yXqIjP/7eFji6KnHGkSZWROlzWNDaGpR0Cn9H2JhG0TswkEuXDwKJvFv+z61GOIPuyExv5gGKh68yf120cMOOgL11EU9HXhth9L1wp35a4ukuusSnsSBOJzya5KobpGY39na/7ucZ7j3MDUk0VTo1oqeMAz1bPB5o8gFhnBknJkSD7+3KmZiQqomxXUMj0BVTRqceUSSzpi5gNX3cRdVFN8mh6M6CCSjb1PipMOtGe7VarFGN/SZy2vRNj6QuuU4Z0+RowtMHe41FpQNTkfivtHRyP4LkQ54hxKtEMSfSMni7TR0TzPAn/kJ6XdDpefXfohcNgJkZrpCsivXCkMrQktiJaQTmBFc4wVPLRPINnD6U=
