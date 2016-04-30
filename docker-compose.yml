@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  sumapi:
+    build: .
+    image: sumapi
+    ports:
+      - "80:80"
