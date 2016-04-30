@@ -1,0 +1,23 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+install:
+  - pip install -r requirements.txt -r requirements-dev.txt
+before_script:
+  - flake8 .
+script:
+  - nosetests --with-coverage
+after_success:
+  - coveralls
+#deploy:
+#  provider: heroku
+#  buildpack: python
+#  api_key: $heroku_api_key
+#  app:
+#    master: sumapi-staging
+#    develop: sumapi-develop
+#env:
+#  global:
+#  - secure: t2SkDZMYaiBQGb18SyRcZF96rlLxo5/XaAZ7p59yI01RRa/DSfU3CDYNZgZsWsZOGAXP3MI6QZWQCjZh22+GfQCimDlhvdt0mC5J0eWSGOnSYoJ6i1PqqArg2+Ykt6wS8bGNzjgCMurbeWeAb5KGeTBzGQIatshSEykeoSNFtkN64w2Lb0vD/NBwl+yXg35WRS+HyqVkJRDpczZX3HTZjKCq9gH3QLDRUrRtHqvk22JPJ9Q0fNHAEEgyntsQfML2mCsf/loGaDw69c+xSkecCKq1dCB4rKNa0J/DngoXWmPKUJrCvTNIAKgB3IWj22ABoPExaYJFJXzTTyvlNUOETFmCZFBWSqrUkjI+cbAhmR9DWzlWsJN3VyLxJ+2ZmLa+H2DwMOoZmPstDVk+y/HwdAFxAc+M+I88I6NJ/WcRfkeIg1t/++/vEH28WY53bFa19HlHrCKzE5EqeS03MY6M6OY5tx5J1VW/45bR6ZvMLXI0A+oRwAYePvnOvb5oXrlBOFQQjKYKwgsCA3D16as7FTg0odMqkYxk9/V5+5An65WqbQRx06fxU270ZkKUh7bdXblH2LuA8N93mk+bnMyI4aLJ/x6Jgi1t41D8nSyWaMHO+jjfC5WwOtom4P/6G00WvTdID9tUasqDQqUyqyX7QL3UlrpceZWuJJeP5OZ+mxQ=
