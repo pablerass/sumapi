@@ -22,9 +22,9 @@ class ApiHandler(tornado.web.RequestHandler):
 class SumHandler(tornado.web.RequestHandler):
     """Sum Handler."""
 
-    def get(self):
+    def get(self, op1, op2):
         """Generate response with result of the sum."""
-        self.write("1")
+        self.write(str(int(op1) + int(op2)))
 
 
 class VersionHandler(tornado.web.RequestHandler):
@@ -38,7 +38,7 @@ class VersionHandler(tornado.web.RequestHandler):
 # Application
 HANDLERS = [
     (r"/", ApiHandler),
-    (r"/sum", SumHandler),
+    (r"/sum/(?P<op1>\d+)/(?P<op2>\d+)", SumHandler),
     (r"/version", VersionHandler),
 ]
 
