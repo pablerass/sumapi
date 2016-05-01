@@ -13,8 +13,13 @@ class SumapiTest(AsyncHTTPTestCase):
         self.assertEqual(sumapi.__version__, response.body.decode())
 
     def test_sumapi_sum(self):
-        response = self.fetch('/sum/1/2', method='GET')
+        response = self.fetch('/1+2', method='GET')
         self.assertEqual('3', response.body.decode())
+        response = self.fetch('/10+3', method='GET')
+        self.assertEqual('13', response.body.decode())
+        response = self.fetch('/33+4', method='GET')
+        self.assertEqual('37', response.body.decode())
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -3,6 +3,6 @@ version: '2'
 services:
   sumapi:
     build: .
-    image: sumapi
+    image: sumapi:1.0
     ports:
       - "80:8888"

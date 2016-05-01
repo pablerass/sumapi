@@ -38,7 +38,7 @@ class VersionHandler(tornado.web.RequestHandler):
 # Application
 HANDLERS = [
     (r"/", ApiHandler),
-    (r"/sum/(?P<op1>\d+)/(?P<op2>\d+)", SumHandler),
+    (r"/(?P<op1>\d+)\+(?P<op2>\d+)", SumHandler),
     (r"/version", VersionHandler),
 ]
 
@@ -46,11 +46,6 @@ HANDLERS = [
 def application():
     """Application."""
     return tornado.web.Application(HANDLERS)
-
-
-def wsgi_application():
-    """WSGI application."""
-    return tornado.wsgi.WSGIApplication(HANDLERS)
 
 
 def main(argv=None):
