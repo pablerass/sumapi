@@ -1,7 +1,11 @@
 node {
-	docker.image('python:3').inside {
+	def py = docker.image('python:3')
+	py.run('pip install -r requirements.txt -r requirements-dev.txt')
+
+	py.inside {
 		stage 'Build and test'
 		checkout scm
-		sh 'pip install -r requirements.txt -r requirements-dev.txt'
+		sh 'flake8 .'
+		sh 'nosetests'
 	}
 }
