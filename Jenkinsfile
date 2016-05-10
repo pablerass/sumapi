@@ -1,13 +1,10 @@
 node {
 	stage 'Test'
-	docker.image('python:3.5').inside {
+	docker.image('pablerass/python-builder').inside {
 		checkout scm
-		withEnv(["HOME=${env.WORKSPACE}",
-				 "PATH=${env.WORKSPACE}/.local/bin:${env.PATH}",
-				 "PYTHONPATH=${env.WORKSPACE}/.local/lib/python3.5:${env.PYTHONPATH}"]) {
-			sh 'pip install --user -r requirements.txt -r requirements-dev.txt'
-			sh 'flake8 .'
-			sh 'nosetests'
-		}
+		sh 'virtualenv dev'
+		sh 'dev/bin/activate && pip install -r requirements.txt -r requirements-dev.txt'
+		sh 'dev/bin/activate && flake8 .'
+		sh 'dev/bin/activate && nosetests'
 	}
 }
