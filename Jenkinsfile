@@ -13,7 +13,7 @@ node {
 	def versions = [ '2.7', '3.4', '3.5' ]
 	for (version in versions) {
 		version_stages = {
-			stage 'Test " + $version
+			stage 'Test ' + $version
 			node {
 				docker.image('pablerass/python-builder' + version).inside {
 					sh 'rm -Rf *'
