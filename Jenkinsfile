@@ -9,7 +9,7 @@ node {
 	}
 
 	stage 'Test versions'
-	def verision_stages ? [:]
+	def verision_stages = [:]
 	def versions = [ '2.7', '3.4', '3.5' ]
 	for (version in versions) {
 		version_stages = {
