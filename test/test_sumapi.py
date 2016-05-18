@@ -20,13 +20,13 @@ class SumapiTest(AsyncHTTPTestCase):
         response = self.fetch('/33+4', method='GET')
         self.assertEqual('37', response.body.decode())
 
-    def test_sumapi_mult(self):
-        response = self.fetch('/1*2', method='GET')
-        self.assertEqual('2', response.body.decode())
-        response = self.fetch('/10*3', method='GET')
-        self.assertEqual('30', response.body.decode())
-        response = self.fetch('/33*4', method='GET')
-        self.assertEqual('132', response.body.decode())
+    #def test_sumapi_mult(self):
+    #    response = self.fetch('/1*2', method='GET')
+    #    self.assertEqual('2', response.body.decode())
+    #    response = self.fetch('/10*3', method='GET')
+    #    self.assertEqual('30', response.body.decode())
+    #    response = self.fetch('/33*4', method='GET')
+    #    self.assertEqual('132', response.body.decode())
 
 
 if __name__ == '__main__':
