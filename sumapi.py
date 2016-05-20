@@ -7,7 +7,7 @@ import tornado.web
 
 LISTEN_PORT = 8888
 
-__version__ = '1.0'
+__version__ = '1.1'
 
 
 # Handlers
@@ -27,6 +27,14 @@ class SumHandler(tornado.web.RequestHandler):
         self.write(str(int(op1) + int(op2)))
 
 
+class MultHandler(tornado.web.RequestHandler):
+    """Sum Handler."""
+
+    def get(self, op1, op2):
+        """Generate response with result of the sum."""
+        self.write(str(int(op1) * int(op2)))
+
+
 class VersionHandler(tornado.web.RequestHandler):
     """API version Handler."""
 
@@ -39,6 +47,7 @@ class VersionHandler(tornado.web.RequestHandler):
 HANDLERS = [
     (r"/", ApiHandler),
     (r"/(?P<op1>\d+)\+(?P<op2>\d+)", SumHandler),
+    (r"/(?P<op1>\d+)\*(?P<op2>\d+)", MultHandler),
     (r"/version", VersionHandler),
 ]
 
