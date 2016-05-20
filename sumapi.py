@@ -7,7 +7,7 @@ import tornado.web
 
 LISTEN_PORT = 8888
 
-__version__ = '1.0'
+__version__ = '1.1'
 
 
 # Handlers
